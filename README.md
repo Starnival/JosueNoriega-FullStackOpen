@@ -1,1 +1,2 @@
-# JosueNoriega-FullStackOpen
+# Josue Noriega
+## Full Stack Open
