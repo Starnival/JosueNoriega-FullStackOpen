@@ -1,0 +1,28 @@
+
+sequenceDiagram
+    participant client
+    participant server
+
+    client->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa
+    activate server
+    server-->>client: HTML document
+    deactivate server
+
+    client->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate server
+    server-->>client: the css file
+    deactivate server
+
+    client->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+    activate server
+    server-->>client: the JavaScript file
+    deactivate server
+
+    Note right of client: The client starts executing the JavaScript code that fetches the JSON from the server
+
+    client->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>client: [{ "content": "Josue Noriega", "date": "2024-1-1" }, ... ]
+    deactivate server
+
+    Note right of client: The client executes the callback function that renders the notes
